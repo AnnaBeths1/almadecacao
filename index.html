@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-i18n="meta.title">Alma de Cacao — Let me guide you back to your heart</title>
+<meta name="description" data-i18n="meta.description" content="Biologische ceremoniële cacao uit Peru en Colombia. Voor wie verbinding zoekt met het hart." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mocha: #9B6B5C;
+    --mocha-deep: #8A5A4B;
+    --rose: #B98778;
+    --rose-soft: #D4B4A7;
+    --cream: #FBF7F2;
+    --cream-warm: #F5EDE4;
+    --ink: #3A2820;
+    --ink-soft: #6B5448;
+    --whisper: #ECDED4;
+    --leaf: #7A8A77;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 36px;
+  }
+
+  /* ===== ANNOUNCEMENT BAR ===== */
+  .announce {
+    background: var(--mocha);
+    color: var(--cream);
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    z-index: 101;
+  }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 22px 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(155, 107, 92, 0.08);
+    transition: padding 0.3s ease;
+  }
+  nav.scrolled { padding: 14px 0; }
+  nav .container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+  }
+  .nav-left { display: flex; gap: 36px; align-items: center; }
+  .nav-right { display: flex; gap: 24px; align-items: center; justify-content: flex-end; }
+  .nav-left a, .nav-right a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-left a::after, .nav-right a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--mocha);
+    transition: width 0.3s ease;
+  }
+  .nav-left a:hover, .nav-right a:hover { color: var(--mocha); }
+  .nav-left a:hover::after, .nav-right a:hover::after { width: 100%; }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .logo-mark {
+    height: 70px;
+    width: auto;
+    display: block;
+  }
+  .logo-mark--footer {
+    height: 110px;
+  }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--ink);
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: inherit;
+  }
+  .icon-btn svg { width: 18px; height: 18px; stroke: var(--ink); stroke-width: 1.4; fill: none; }
+  .cart-badge {
+    background: var(--mocha);
+    color: white;
+    font-size: 10px;
+    border-radius: 50%;
+    width: 16px; height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    position: relative;
+    top: -6px;
+    margin-left: -4px;
+  }
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgba(155, 107, 92, 0.25);
+    border-radius: 40px;
+    padding: 3px;
+  }
+  .lang-btn {
+    border: none;
+    background: none;
+    padding: 5px 11px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: inherit;
+    transition: all 0.25s;
+  }
+  .lang-btn.active {
+    background: var(--mocha);
+    color: var(--cream);
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .mobile-toggle span {
+    display: block;
+    width: 22px; height: 1.5px;
+    background: var(--ink);
+    margin: 5px 0;
+    transition: 0.25s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image:
+      linear-gradient(to bottom, rgba(58,40,32,0.25), rgba(58,40,32,0.55)),
+      url('photos/women-field-wide.jpg');
+    background-size: cover;
+    background-position: center 35%;
+    padding: 100px 20px 80px;
+  }
+  .hero-grass {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(180deg, transparent 55%, rgba(20,15,10,0.5) 100%);
+    pointer-events: none;
+  }
+  .hero-pod { display: none; }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--cream);
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(54px, 8vw, 110px);
+    color: #ffffff;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(17px, 1.8vw, 22px);
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 36px;
+    font-weight: 400;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  }
+  .hero-cta {
+    display: inline-block;
+    padding: 14px 38px;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(255,255,255,0.7);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .hero-cta:hover {
+    background: var(--cream);
+    color: var(--mocha-deep);
+    border-color: var(--cream);
+  }
+
+  /* ===== INTRO QUOTE ===== */
+  .intro-quote {
+    padding: 110px 20px;
+    text-align: center;
+    background: #ffffff;
+  }
+  .intro-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(26px, 3vw, 36px);
+    color: var(--ink);
+    max-width: 720px;
+    margin: 0 auto 36px;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .text-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--mocha);
+    padding-bottom: 4px;
+    transition: color 0.25s;
+  }
+  .text-link:hover { color: var(--mocha); }
+
+  /* ===== COLLECTION GRID ===== */
+  .collection {
+    padding: 0 0 120px;
+    background: #ffffff;
+  }
+  .collection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    background: transparent;
+    padding: 0 20px 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .collection-item {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--whisper);
+    border-radius: 4px;
+    box-shadow: 0 20px 50px -25px rgba(58,40,32,0.25);
+  }
+  .collection-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+  .collection-item:hover .collection-img { transform: scale(1.04); }
+  .collection-caption {
+    background: var(--mocha);
+    color: var(--cream);
+    padding: 26px 32px 36px;
+  }
+  .collection-grid .collection-caption {
+    display: contents;
+  }
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cream);
+    padding: 24px 0 6px 32px;
+    background: var(--mocha);
+  }
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: rgba(251, 247, 242, 0.75);
+    padding: 0 0 36px 32px;
+    background: var(--mocha);
+  }
+
+  /* ===== SECTIONS ===== */
+  section.standard { padding: 130px 0; }
+  .section-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 80px;
+  }
+  .section-label {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--mocha);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(38px, 5vw, 58px);
+    margin-bottom: 24px;
+    font-weight: 300;
+    color: var(--ink);
+  }
+  .section-header p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  /* ===== VALUES ===== */
+  .values {
+    background: #ffffff;
+    padding: 100px 0;
+    border-top: 1px solid rgba(155, 107, 92, 0.15);
+    border-bottom: 1px solid rgba(155, 107, 92, 0.15);
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .value-item {
+    text-align: center;
+    padding: 0 40px;
+    border-right: 1px solid rgba(155, 107, 92, 0.15);
+  }
+  .value-item:last-child { border-right: none; }
+  .value-icon {
+    width: 44px; height: 44px;
+    margin: 0 auto 24px;
+    color: var(--ink);
+    stroke: var(--ink);
+    stroke-width: 1.3;
+    fill: none;
+  }
+  .value-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .value-item p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  /* ===== CRIOLLO PERU PRODUCT DETAIL ===== */
+  .peru {
+    padding: 130px 0;
+    background: #ffffff;
+    position: relative;
+  }
+  .peru-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .peru-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(34px, 4vw, 48px);
+    color: var(--ink);
+    margin: 14px 0 28px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .peru-content p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    line-height: 1.85;
+  }
+  .peru-italic {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic;
+    font-size: 17px !important;
+    color: var(--mocha) !important;
+    border-left: 2px solid var(--rose-soft);
+    padding-left: 18px;
+    margin-top: 28px !important;
+  }
+  .peru-gallery {
+    margin-top: 70px;
+  }
+  .peru-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 3/2;
+    box-shadow: 0 30px 60px -25px rgba(58,40,32,0.3);
+  }
+  .peru-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+  .peru-gallery figure:hover img { transform: scale(1.03); }
+  @media (max-width: 900px) {
+    .peru-grid { grid-template-columns: 1fr; gap: 50px; }
+    .peru-visual { order: -1; }
+    .peru-gallery figure { aspect-ratio: 4/5; }
+  }
+
+  /* ===== BLAUWE LOTUS PRODUCT DETAIL ===== */
+  .lotus {
+    padding: 130px 0;
+    background: var(--cream-warm);
+    position: relative;
+  }
+  .lotus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .lotus-hero {
+    margin: 0;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 40px 70px -25px rgba(58,40,32,0.35);
+  }
+  .lotus-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .lotus-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(34px, 4vw, 48px);
+    color: var(--ink);
+    margin: 14px 0 28px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .lotus-content p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    line-height: 1.85;
+  }
+  .lotus-italic {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic;
+    font-size: 19px !important;
+    color: var(--mocha-deep) !important;
+    border-left: 2px solid var(--rose-soft);
+    padding-left: 18px;
+    margin-top: 28px !important;
+  }
+  .lotus-meta {
+    margin-top: 36px;
+    display: grid;
+    gap: 14px;
+    padding: 28px 30px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(155, 107, 92, 0.18);
+    border-radius: 4px;
+  }
+  .lotus-meta-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .lotus-meta-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mocha);
+  }
+  .lotus-meta-value {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .lotus-cta {
+    display: inline-block;
+    margin-top: 36px;
+    padding: 14px 38px;
+    background: var(--mocha-deep);
+    color: var(--cream);
+    border: 1px solid var(--mocha-deep);
+    font-size: 12px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+  .lotus-cta:hover {
+    background: transparent;
+    color: var(--mocha-deep);
+  }
+  .lotus-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 90px;
+  }
+  .lotus-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 4/5;
+    box-shadow: 0 20px 40px -20px rgba(58,40,32,0.2);
+  }
+  .lotus-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+  .lotus-gallery figure:hover img { transform: scale(1.04); }
+  @media (max-width: 900px) {
+    .lotus-grid { grid-template-columns: 1fr; gap: 50px; }
+    .lotus-gallery { grid-template-columns: 1fr; }
+    .lotus-meta-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ===== EDITORIAL IMAGE BLOCK ===== */
+  .editorial {
+    padding: 0;
+    background: var(--mocha);
+    position: relative;
+  }
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    min-height: 600px;
+  }
+  .editorial-img {
+    background: linear-gradient(to bottom, #6B5448, #3A2820);
+    position: relative;
+    overflow: hidden;
+  }
+  .editorial-img img,
+  .editorial-img svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .editorial-text {
+    background: var(--mocha);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+    position: relative;
+  }
+  .editorial-text blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 34px);
+    text-align: center;
+    line-height: 1.45;
+    color: var(--cream);
+    font-weight: 300;
+  }
+  .editorial-text blockquote::after {
+    content: '';
+    display: block;
+    width: 36px; height: 1px;
+    background: rgba(251, 247, 242, 0.5);
+    margin: 28px auto 0;
+  }
+  .editorial-text cite {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(251, 247, 242, 0.7);
+    margin-top: 20px;
+  }
+
+  /* ===== WAT IS CACAO (info) ===== */
+  .what-is {
+    background: var(--cream);
+    padding: 130px 0;
+  }
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+  }
+  .what-visual {
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #B98778 0%, #6B5448 100%);
+    position: relative;
+    box-shadow: 0 30px 60px -20px rgba(58,40,32,0.25);
+  }
+  .what-visual img,
+  .what-visual svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* What-is sectie fotogalerij */
+  .what-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 70px;
+  }
+  .what-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    box-shadow: 0 20px 40px -20px rgba(58,40,32,0.25);
+  }
+  .what-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+  .what-gallery figure:hover img { transform: scale(1.04); }
+  @media (max-width: 720px) {
+    .what-gallery { grid-template-columns: 1fr; }
+  }
+  .what-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(36px, 4.5vw, 52px);
+    color: var(--ink);
+    margin-bottom: 28px;
+    font-weight: 300;
+    line-height: 1.1;
+  }
+  .what-content > p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+    line-height: 1.85;
+  }
+  .what-bullets {
+    margin-top: 36px;
+    display: grid;
+    gap: 22px;
+  }
+  .what-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(155, 107, 92, 0.2);
+  }
+  .what-bullet:first-child { border-top: none; padding-top: 0; }
+  .what-bullet-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--mocha);
+    flex-shrink: 0;
+    width: 36px;
+    line-height: 1;
+  }
+  .what-bullet h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .what-bullet p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ===== RITUEEL STEPS ===== */
+  .ritual {
+    padding: 130px 0;
+    background: #ffffff;
+  }
+  .ritual-banner {
+    margin: 50px 0 30px;
+    overflow: hidden;
+    border-radius: 4px;
+    aspect-ratio: 16/9;
+    box-shadow: 0 30px 60px -20px rgba(58,40,32,0.25);
+  }
+  .ritual-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 30px;
+  }
+  .ritual-step {
+    padding: 40px 30px;
+    text-align: center;
+    border-right: 1px solid rgba(155, 107, 92, 0.15);
+    position: relative;
+  }
+  .ritual-step:last-child { border-right: none; }
+  .ritual-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 60px;
+    color: var(--mocha);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 22px;
+    display: block;
+  }
+  .ritual-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .ritual-step p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ===== JOURNAL / BLOG ===== */
+  .journal {
+    background: var(--cream);
+    padding: 130px 0;
+  }
+  .journal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .journal-card {
+    cursor: pointer;
+    transition: transform 0.35s ease;
+  }
+  .journal-card:hover { transform: translateY(-4px); }
+  .journal-img {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin-bottom: 24px;
+    border-radius: 2px;
+  }
+  .journal-img svg,
+  .journal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+  }
+  .journal-card:hover .journal-img img { transform: scale(1.04); }
+  .journal-meta {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--mocha);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .journal-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--ink);
+    transition: color 0.25s;
+  }
+  .journal-card:hover h3 { color: var(--mocha); }
+  .journal-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .journal-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--mocha);
+    padding-bottom: 3px;
+  }
+
+  /* ===== NEWSLETTER ===== */
+  .newsletter {
+    background: var(--mocha);
+    padding: 110px 20px;
+    color: var(--cream);
+    text-align: center;
+  }
+  .newsletter-box {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .newsletter h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(34px, 4vw, 46px);
+    color: var(--cream);
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+  .newsletter p {
+    color: rgba(251, 247, 242, 0.85);
+    margin-bottom: 36px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .newsletter-form {
+    display: flex;
+    gap: 0;
+    max-width: 460px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(251, 247, 242, 0.5);
+  }
+  .newsletter-form input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 14px 0;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--cream);
+    outline: none;
+  }
+  .newsletter-form input::placeholder { color: rgba(251, 247, 242, 0.5); }
+  .newsletter-form button {
+    background: transparent;
+    color: var(--cream);
+    border: none;
+    padding: 14px 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.25s;
+  }
+  .newsletter-form button:hover { opacity: 0.7; }
+  .newsletter-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    color: rgba(251, 247, 242, 0.85);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .newsletter-ig:hover { color: var(--cream); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #ffffff;
+    color: var(--ink);
+    padding: 80px 0 32px;
+    border-top: 1px solid rgba(155, 107, 92, 0.15);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-brand .logo {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 320px;
+  }
+  .footer-col h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--mocha);
+    margin-bottom: 22px;
+    font-weight: 400;
+  }
+  .footer-col ul {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .footer-col a {
+    font-size: 14px;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  .footer-col a:hover { color: var(--mocha); }
+  .footer-ig {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-ig svg { flex-shrink: 0; }
+  .footer-bottom {
+    border-top: 1px solid rgba(155, 107, 92, 0.15);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.4px;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px) {
+    .nav-left, .nav-right { display: none; }
+    .nav-left.open, .nav-right.open {
+      display: flex;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--cream);
+      padding: 24px;
+      border-bottom: 1px solid rgba(155, 107, 92, 0.1);
+      gap: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+    nav .container { grid-template-columns: auto 1fr auto; }
+    .mobile-toggle { display: block; justify-self: start; }
+    .collection-grid { grid-template-columns: 1fr; }
+    .what-grid { grid-template-columns: 1fr; gap: 50px; }
+    .editorial-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .value-item { border-right: none; border-bottom: 1px solid rgba(155, 107, 92, 0.15); padding: 40px 20px; }
+    .value-item:last-child { border-bottom: none; }
+    .ritual-grid { grid-template-columns: 1fr 1fr; }
+    .ritual-step:nth-child(2) { border-right: none; }
+    .ritual-step { border-bottom: 1px solid rgba(155, 107, 92, 0.15); }
+    .ritual-step:nth-last-child(-n+2) { border-bottom: none; }
+    .journal-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    section.standard, .what-is, .ritual, .journal { padding: 80px 0; }
+  }
+  @media (max-width: 540px) {
+    .container { padding: 0 20px; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .ritual-grid { grid-template-columns: 1fr; }
+    .ritual-step { border-right: none; border-bottom: 1px solid rgba(155, 107, 92, 0.15); }
+    .announce { font-size: 10px; letter-spacing: 1.5px; padding: 10px 16px; }
+    .nav-left.open, .nav-right.open { right: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== ANNOUNCEMENT ========== -->
+<div class="announce" data-i18n="announce">Gratis verzending binnen Nederland met een bestelling van 50 euro</div>
+
+<!-- ========== NAV ========== -->
+<nav id="nav">
+  <div class="container">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-left" id="navLeft">
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#shop" data-i18n="nav.shop">Shop</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#wat-is-cacao" data-i18n="nav.what">Wat is Cacao?</a>
+    </div>
+    <a href="#home" class="logo" aria-label="Alma de Cacao">
+      <img class="logo-mark" src="logo-full.png" alt="Alma de Cacao" />
+    </a>
+    <div class="nav-right" id="navRight">
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20 c0 -4 4 -7 8 -7 s8 3 8 7"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24"><path d="M5 7 h14 l-1.5 12 H6.5 z"/><path d="M8 7 v-2 a4 4 0 0 1 8 0 v2"/></svg>
+        <span class="cart-badge">1</span>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="nl">NL</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<header class="hero" id="home">
+  <div class="hero-grass"></div>
+  <div class="hero-content">
+    <h1 data-i18n="hero.title">Onze nieuwste collectie</h1>
+    <p class="hero-sub" data-i18n="hero.sub">Cacao als onderdeel van het ritueel om te verbinden met je hart.</p>
+    <a href="#shop" class="hero-cta" data-i18n="hero.cta">Lees meer</a>
+  </div>
+</header>
+
+<!-- ========== INTRO QUOTE ========== -->
+<section class="intro-quote">
+  <p data-i18n="intro.quote">Pure, biologische cacao uit het hart van Peru en Colombia — geoogst met aandacht, gedeeld met liefde.</p>
+  <a href="#shop" class="text-link" data-i18n="intro.cta">Ontdek de collectie</a>
+</section>
+
+<!-- ========== COLLECTION / SHOP ========== -->
+<section class="collection" id="shop">
+  <div class="container" style="margin-bottom:60px;">
+    <div class="section-header" style="margin-bottom:30px;">
+      <span class="section-label" data-i18n="shop.label">Onze cacao</span>
+      <h2 data-i18n="shop.title">Met aandacht, zorg en liefde samengesteld</h2>
+    </div>
+  </div>
+  <div class="collection-grid">
+    <a class="collection-item" href="#peru">
+      <img class="collection-img" src="photos/criollo-product.jpg" alt="Biologische Criollo Cacao uit Peru in een mand met wilde bloemen" loading="lazy" />
+    </a>
+    <a class="collection-item" href="#lotus">
+      <img class="collection-img" src="photos/lotus-bar-flower.jpg" alt="Blauwe Lotus cacao blok op mos met blauwe lotus bloem" loading="lazy" />
+    </a>
+  </div>
+  <div style="max-width:1100px; margin:-50px auto 0; padding:0 20px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:4px;" data-i18n="product1.name">Biologische Criollo Cacao uit Peru</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink-soft);" data-i18n="product1.price">€11,95 — 125g · €21,95 — 250g</p>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:4px;" data-i18n="product2.name">Blauwe Lotus — Cacao Blend</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink-soft);" data-i18n="product2.price">€33 — 200g · €60 — 400g</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CRIOLLO PERU DETAIL ========== -->
+<section class="peru" id="peru">
+  <div class="container">
+    <div class="peru-grid">
+      <div class="peru-content">
+        <span class="section-label" data-i18n="peru.label">Onze oorsprong</span>
+        <h2 data-i18n="peru.title">Biologische Criollo Cacao uit Peru</h2>
+        <p data-i18n="peru.p1">Deze biologische Criollo Cacao wordt geoogst in Satipo, in het centrale deel van Peru, gelegen in het departement Junín. De Cacao wordt met zorg verbouwd door geassocieerde Asháninka-producenten uit het gebied rondom de rivier de Ene, die de hoge kwaliteit en pure oorsprong van deze Cacao waarborgen.</p>
+        <p data-i18n="peru.p2">Criollo Cacao staat bekend als een van de meest verfijnde en gewaardeerde cacaovariëteiten, geliefd om haar zachte smaak, rijke aroma's en diepe culturele betekenis.</p>
+        <p data-i18n="peru.p3">Naast haar bijzondere smaakbeleving biedt ceremoniële Cacao ook diverse natuurlijke voordelen. Cacao is rijk aan magnesium, ijzer en andere voedende stoffen die bijdragen aan het algemene welzijn. Naast de gezondheidsvoordelen werkt ze ook nog sterk op emotioneel en energetisch niveau. Velen ervaren haar zachte, openende kracht wanneer zij Cacao met aandacht tot zich nemen. Ze werkt graag met je samen om je hart te openen en emoties makkelijker te laten stromen.</p>
+        <p data-i18n="peru.p4">Deze Cacao wordt gemaakt door eerst de bonen te roosteren, en vervolgens de cacaonibs zorgvuldig te malen tot een pure, volle pasta. Vervolgens wordt de Cacao getemperd en in vormen gegoten, waardoor een rijke en authentieke Cacao ontstaat die geschikt is voor zowel ceremonies als dagelijks gebruik.</p>
+        <p class="peru-italic" data-i18n="peru.p5">Zie de achterkant van het zakje voor gebruiksinstructies.</p>
+
+        <div class="lotus-meta">
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="peru.metaOrigin">Oorsprong</span>
+            <span class="lotus-meta-value" data-i18n="peru.metaOriginVal">Satipo, Junín — Centraal Peru · Asháninka coöperatie</span>
+          </div>
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="peru.metaVar">Variëteit</span>
+            <span class="lotus-meta-value" data-i18n="peru.metaVarVal">Criollo · 100% biologisch · 100% pure cacaomassa</span>
+          </div>
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="peru.metaPrice">Prijs</span>
+            <span class="lotus-meta-value" data-i18n="peru.metaPriceVal">€11,95 — 125g · €21,95 — 250g</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="lotus-cta" data-i18n="peru.cta">Bestellen</a>
+      </div>
+      <div class="peru-visual">
+        <figure class="lotus-hero">
+          <img src="photos/criollo-product.jpg" alt="Biologische Criollo Cacao uit Peru, in mand met wilde bloemen" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+
+    <div class="peru-gallery">
+      <figure><img src="photos/criollo-package-tree.jpg" alt="Criollo Cacao verpakking met open box op gele stof bij boomwortels" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLAUWE LOTUS DETAIL ========== -->
+<section class="lotus" id="lotus">
+  <div class="container">
+    <div class="lotus-grid">
+      <div class="lotus-visual">
+        <figure class="lotus-hero">
+          <img src="photos/lotus-bar-flower.jpg" alt="Blauwe Lotus cacao blok met blauwe lotus bloem op mos" loading="lazy" />
+        </figure>
+      </div>
+      <div class="lotus-content">
+        <span class="section-label" data-i18n="lotus.label">Nieuw in de collectie</span>
+        <h2 data-i18n="lotus.title">Blauwe Lotus · Cacao Blend</h2>
+        <p data-i18n="lotus.p1">Deze blend met Blauwe Lotus is een bijzondere combinatie van planten en energieën. Blauwe Lotus staat bekend om haar rustgevende en intuïtieve werking, terwijl Cacao helpt om het hart te openen, verbinding te verdiepen en meer aanwezigheid in het moment te brengen. Samen vormen ze een warme, aardende combinatie die uitnodigt tot ontspanning, creativiteit en verbinding.</p>
+        <p data-i18n="lotus.p2">Elke blend wordt met aandacht, zorg en liefde samengesteld om een zo puur en compleet mogelijk product te creëren. In ieder kopje verwerken we een zelfgemaakt Blauwe Lotus glycerine-extract, gecombineerd met biologische ceremoniële Cacao van Colombia of Peru en een harmonieuze mix van specerijen zoals kardemom, kaneel, vanille en een vleugje cayenne. De kruiden zijn zorgvuldig afgestemd om de diepe, zachte smaak van de cacao te versterken en een verwarmende ervaring te bieden.</p>
+        <p class="lotus-italic" data-i18n="lotus.p3">Perfect voor rituelen, meditatie, creatieve momenten of een bewust rustpunt gedurende de dag of avond.</p>
+
+        <div class="lotus-meta">
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="lotus.metaIng">Ingrediënten</span>
+            <span class="lotus-meta-value" data-i18n="lotus.metaIngVal">Blauwe Lotus extract · Cacao (Colombia / Peru) · Kardemom · Kaneel · Vanille · Cayenne</span>
+          </div>
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="lotus.metaWeight">Formaat</span>
+            <span class="lotus-meta-value" data-i18n="lotus.metaWeightVal">Eén groot blok ≈ 400 gram · ook beschikbaar in 200 gram</span>
+          </div>
+          <div class="lotus-meta-row">
+            <span class="lotus-meta-label" data-i18n="lotus.metaPrice">Prijs</span>
+            <span class="lotus-meta-value" data-i18n="lotus.metaPriceVal">€33 — 200g · €60 — 400g</span>
+          </div>
+        </div>
+
+        <a href="#contact" class="lotus-cta" data-i18n="lotus.cta">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="lotus-gallery">
+      <figure><img src="photos/lotus-bar-moss.jpg" alt="Blauwe Lotus cacao blok gebroken op mos en klimop" loading="lazy" /></figure>
+      <figure><img src="photos/lotus-pieces-dress.jpg" alt="Stukjes Blauwe Lotus cacao met bloemblaadjes op crème stof" loading="lazy" /></figure>
+      <figure><img src="photos/lotus-box-fabric.jpg" alt="Blauwe Lotus cacao verpakking met productkaart op stof" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VALUES ========== -->
+<section class="values">
+  <div class="container">
+    <div class="values-grid">
+      <div class="value-item">
+        <svg class="value-icon" viewBox="0 0 40 40">
+          <path d="M 4 20 Q 20 8 36 20 Q 20 32 4 20 Z"/>
+          <circle cx="20" cy="20" r="5"/>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+        </svg>
+        <h3 data-i18n="val1.title">Kwaliteit</h3>
+        <p data-i18n="val1.desc">Wij werken met pure ingrediënten en kiezen bewust voor zorgvuldige productie, eerlijke herkomst en aandacht in elk detail. Van boon tot kopje staat kwaliteit centraal.</p>
+      </div>
+      <div class="value-item">
+        <svg class="value-icon" viewBox="0 0 40 40">
+          <path d="M 20 34 C 6 26 4 14 12 10 C 16 8 19 11 20 14 C 21 11 24 8 28 10 C 36 14 34 26 20 34 Z"/>
+        </svg>
+        <h3 data-i18n="val2.title">Respect</h3>
+        <p data-i18n="val2.desc">Respect vormt de basis van alles wat we doen — voor de aarde, de Cacao, de oorsprong van het product en de mensen die ermee verbonden zijn. We geloven in samenwerken vanuit bewustzijn, dankbaarheid en zorg.</p>
+      </div>
+      <div class="value-item">
+        <svg class="value-icon" viewBox="0 0 40 40">
+          <circle cx="20" cy="14" r="6"/>
+          <path d="M 8 34 C 8 26 14 22 20 22 C 26 22 32 26 32 34"/>
+        </svg>
+        <h3 data-i18n="val3.title">Verbinding</h3>
+        <p data-i18n="val3.desc">Wij geloven in oprechte verbinding — met onszelf, met elkaar en met de mensen die onze Cacao drinken. Daarom bieden we onze producten niet alleen online aan, maar staan we ook op markten en evenementen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EDITORIAL QUOTE ========== -->
+<section class="editorial">
+  <div class="editorial-grid">
+    <div class="editorial-img">
+      <img src="photos/two-cups-hands.jpg" alt="Twee handen die keramieken kopjes ceremoniële cacao vasthouden" loading="lazy" />
+    </div>
+    <div class="editorial-text">
+      <div>
+        <blockquote data-i18n="editorial.quote">"Let me guide you back to your heart."</blockquote>
+        <cite data-i18n="editorial.cite">— Love, Alma</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WAT IS CACAO ========== -->
+<section class="what-is" id="wat-is-cacao">
+  <div class="container">
+    <div class="what-grid">
+      <div class="what-visual">
+        <img src="photos/woman-tree-color.jpg" alt="Vrouw met ceremoniële cacao chalice onder een boom" loading="lazy" />
+      </div>
+      <div class="what-content">
+        <span class="section-label" data-i18n="what.label">Wat is cacao?</span>
+        <h2 data-i18n="what.title">De heilige boon van Mesoamerika</h2>
+        <p data-i18n="what.p1">Ceremoniële cacao is iets totaal anders dan de chocolade die je uit de supermarkt kent. Het is 100% pure cacaomassa — alleen de boon, gefermenteerd, geroosterd en zacht gemalen. Geen suiker, geen melk, geen vulstoffen.</p>
+        <p data-i18n="what.p2">Al meer dan 5000 jaar wordt cacao gedronken als heilige plant. De Olmeken, Maya's en Azteken zagen haar als een geschenk van de goden — een plantbondgenoot die het hart opent, focus brengt en je dichter bij jezelf brengt.</p>
+
+        <div class="what-bullets">
+          <div class="what-bullet">
+            <span class="what-bullet-number">i.</span>
+            <div>
+              <h4 data-i18n="bul1.title">Rijk aan voedingsstoffen</h4>
+              <p data-i18n="bul1.desc">Vol magnesium, ijzer, antioxidanten en theobromine — een zachte, langdurige energie zonder cafeïnedip.</p>
+            </div>
+          </div>
+          <div class="what-bullet">
+            <span class="what-bullet-number">ii.</span>
+            <div>
+              <h4 data-i18n="bul2.title">Opent het hart</h4>
+              <p data-i18n="bul2.desc">Cacao bevat anandamide en PEA — moleculen die geassocieerd worden met geluk, verbinding en liefde.</p>
+            </div>
+          </div>
+          <div class="what-bullet">
+            <span class="what-bullet-number">iii.</span>
+            <div>
+              <h4 data-i18n="bul3.title">Zacht en grondend</h4>
+              <p data-i18n="bul3.desc">Geen psychedelicum. Een zachte plantbondgenoot die uitnodigt tot aanwezigheid, focus en zelfreflectie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="what-gallery">
+      <figure><img src="photos/altar-cups-overhead.jpg" alt="Cacao altaar met kopjes en bloemen op mos" loading="lazy" /></figure>
+      <figure><img src="photos/dress-altar-tree.jpg" alt="Vrouw bij boom met cacao-altaar aan haar voeten" loading="lazy" /></figure>
+      <figure><img src="photos/two-women-together.jpg" alt="Twee vrouwen samen onder een boom in stilte" loading="lazy" /></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RITUEEL ========== -->
+<section class="ritual">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-i18n="ritual.label">Het ritueel</span>
+      <h2 data-i18n="ritual.title">Zo bereid je jouw cacao</h2>
+      <p data-i18n="ritual.lead">Een eenvoudig ritueel. Vier stappen. Een moment voor jezelf.</p>
+    </div>
+    <figure class="ritual-banner">
+      <img src="photos/hands-cup-rock.jpg" alt="Twee handen die kopjes ceremoniële cacao vasthouden tussen klimop" loading="lazy" />
+    </figure>
+    <div class="ritual-grid">
+      <div class="ritual-step">
+        <span class="ritual-num">i.</span>
+        <h4 data-i18n="step1.title">Weeg af</h4>
+        <p data-i18n="step1.desc">20–30 gram voor een dagelijkse beker. 40–45 gram voor een ceremoniële dosis.</p>
+      </div>
+      <div class="ritual-step">
+        <span class="ritual-num">ii.</span>
+        <h4 data-i18n="step2.title">Verwarm zacht</h4>
+        <p data-i18n="step2.desc">Verwarm 200 ml water of plantaardige melk tot net onder kookpunt. Niet koken.</p>
+      </div>
+      <div class="ritual-step">
+        <span class="ritual-num">iii.</span>
+        <h4 data-i18n="step3.title">Roer en proef</h4>
+        <p data-i18n="step3.desc">Voeg cacao toe en roer met een houten lepel of garde. Optioneel: honing, kaneel of een snufje chili.</p>
+      </div>
+      <div class="ritual-step">
+        <span class="ritual-num">iv.</span>
+        <h4 data-i18n="step4.title">Drink met aandacht</h4>
+        <p data-i18n="step4.desc">Adem in. Zet een intentie. Drink langzaam. Voel hoe de warmte je hart bereikt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== JOURNAL ========== -->
+<section class="journal" id="kennis">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label" data-i18n="journal.label">Kennisbank</span>
+      <h2 data-i18n="journal.title">Verhalen uit de cacaowereld</h2>
+      <p data-i18n="journal.lead">Verdieping, wetenschap en wijsheid rond de plant die we zo liefhebben.</p>
+    </div>
+    <div class="journal-grid">
+
+      <article class="journal-card">
+        <div class="journal-img">
+          <img src="photos/farm-beans-drying.jpg" alt="Cacaobonen drogend in een kas op de farm in Colombia" loading="lazy" />
+        </div>
+        <div class="journal-meta" data-i18n="jrn1.meta">Ritueel · 6 min</div>
+        <h3 data-i18n="jrn1.title">Het verschil tussen ceremoniële cacao en chocolade</h3>
+        <p data-i18n="jrn1.excerpt">Waarom is ceremoniële cacao zo anders dan de reep uit de supermarkt? Over bereiding, oorsprong en intentie.</p>
+        <a class="journal-link" data-i18n="journal.read">Lees verder</a>
+      </article>
+
+      <article class="journal-card">
+        <div class="journal-img">
+          <img src="photos/farm-pods-tree.jpg" alt="Rijpe rode en paarse cacaopeulen aan de boom op de farm in Colombia" loading="lazy" />
+        </div>
+        <div class="journal-meta" data-i18n="jrn2.meta">Geschiedenis · 8 min</div>
+        <h3 data-i18n="jrn2.title">5000 jaar cacao: van Olmeken tot vandaag</h3>
+        <p data-i18n="jrn2.excerpt">Een reis door de tijd — hoe een onopvallende jungleplant de gewijde drank werd van koningen en sjamanen.</p>
+        <a class="journal-link" data-i18n="journal.read">Lees verder</a>
+      </article>
+
+      <article class="journal-card">
+        <div class="journal-img">
+          <img src="photos/annelies-cacao-cup.jpg" alt="Annelies met een kopje ceremoniële cacao in zacht zonlicht" loading="lazy" />
+        </div>
+        <div class="journal-meta" data-i18n="jrn3.meta">Wetenschap · 5 min</div>
+        <h3 data-i18n="jrn3.title">Cacao en het hart: wat zegt de wetenschap?</h3>
+        <p data-i18n="jrn3.excerpt">Theobromine, flavanolen, anandamide — de moleculen achter de magie. Wat doet cacao werkelijk in je lichaam?</p>
+        <a class="journal-link" data-i18n="journal.read">Lees verder</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== NEWSLETTER ========== -->
+<section class="newsletter" id="contact">
+  <div class="newsletter-box">
+    <h2 data-i18n="news.title">Blijf in verbinding</h2>
+    <p data-i18n="news.lead">Ontvang maandelijks een zachte brief: nieuwe oogst, rituelen, verhalen en aanbiedingen voor de community.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ Bedankt';">
+      <input type="email" required data-i18n-placeholder="news.placeholder" placeholder="jouw@email.nl" />
+      <button type="submit" data-i18n="news.btn">Inschrijven</button>
+    </form>
+    <a href="https://www.instagram.com/alma_de_cacao_/" target="_blank" rel="noopener noreferrer" class="newsletter-ig">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      <span data-i18n="news.ig">Volg ons op Instagram · @alma_de_cacao_</span>
+    </a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="Alma de Cacao">
+          <img class="logo-mark logo-mark--footer" src="logo-full.png" alt="Alma de Cacao" />
+        </a>
+        <p data-i18n="footer.tag">Pure ceremoniële cacao uit Peru en Colombia. Met respect geoogst, met liefde gedeeld.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.shopTitle">Shop</h5>
+        <ul>
+          <li><a href="#shop" data-i18n="footer.shop1">Criollo Cacao</a></li>
+          <li><a href="#shop" data-i18n="footer.shop2">Blauwe Lotus Blend</a></li>
+          <li><a href="#shop" data-i18n="footer.shop3">Markten & evenementen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.infoTitle">Info</h5>
+        <ul>
+          <li><a href="#wat-is-cacao" data-i18n="footer.info1">Wat is cacao?</a></li>
+          <li><a href="#" data-i18n="footer.info2">Verzending</a></li>
+          <li><a href="#" data-i18n="footer.info3">Veelgestelde vragen</a></li>
+          <li><a href="#" data-i18n="footer.info4">Algemene voorwaarden</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.contactTitle">Contact</h5>
+        <ul>
+          <li><a href="mailto:hola@almadecacao.nl">hola@almadecacao.nl</a></li>
+          <li>
+            <a href="https://www.instagram.com/alma_de_cacao_/" target="_blank" rel="noopener noreferrer" class="footer-ig">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+              <span>@alma_de_cacao_</span>
+            </a>
+          </li>
+          <li><a href="#" data-i18n="footer.privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Alma de Cacao · Met liefde gemaakt in Nederland</span>
+      <span data-i18n="footer.signature">Let me guide you back to your heart.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== TRANSLATIONS + SCRIPT ========== -->
+<script>
+const translations = {
+  nl: {
+    "meta.title": "Alma de Cacao — Let me guide you back to your heart",
+    "meta.description": "Biologische ceremoniële cacao uit Peru en Colombia. Voor wie verbinding zoekt met het hart.",
+
+    "announce": "Gratis verzending binnen Nederland met een bestelling van 50 euro",
+
+    "nav.home": "Home",
+    "nav.shop": "Shop",
+    "nav.contact": "Contact",
+    "nav.what": "Wat is Cacao?",
+
+    "hero.title": "Onze nieuwste collectie",
+    "hero.sub": "Cacao als onderdeel van het ritueel om te verbinden met je hart.",
+    "hero.cta": "Lees meer",
+
+    "intro.quote": "Pure, biologische cacao uit het hart van Peru en Colombia — geoogst met aandacht, gedeeld met liefde.",
+    "intro.cta": "Ontdek de collectie",
+
+    "shop.label": "Onze cacao",
+    "shop.title": "Met aandacht, zorg en liefde samengesteld",
+    "product1.name": "Biologische Criollo Cacao uit Peru",
+    "product1.price": "€11,95 — 125g · €21,95 — 250g",
+    "product2.name": "Blauwe Lotus — Cacao Blend",
+    "product2.price": "€33 — 200g · €60 — 400g",
+
+    "peru.label": "Onze oorsprong",
+    "peru.title": "Biologische Criollo Cacao uit Peru",
+    "peru.p1": "Deze biologische Criollo Cacao wordt geoogst in Satipo, in het centrale deel van Peru, gelegen in het departement Junín. De Cacao wordt met zorg verbouwd door geassocieerde Asháninka-producenten uit het gebied rondom de rivier de Ene, die de hoge kwaliteit en pure oorsprong van deze Cacao waarborgen.",
+    "peru.p2": "Criollo Cacao staat bekend als een van de meest verfijnde en gewaardeerde cacaovariëteiten, geliefd om haar zachte smaak, rijke aroma's en diepe culturele betekenis.",
+    "peru.p3": "Naast haar bijzondere smaakbeleving biedt ceremoniële Cacao ook diverse natuurlijke voordelen. Cacao is rijk aan magnesium, ijzer en andere voedende stoffen die bijdragen aan het algemene welzijn. Naast de gezondheidsvoordelen werkt ze ook nog sterk op emotioneel en energetisch niveau. Velen ervaren haar zachte, openende kracht wanneer zij Cacao met aandacht tot zich nemen. Ze werkt graag met je samen om je hart te openen en emoties makkelijker te laten stromen.",
+    "peru.p4": "Deze Cacao wordt gemaakt door eerst de bonen te roosteren, en vervolgens de cacaonibs zorgvuldig te malen tot een pure, volle pasta. Vervolgens wordt de Cacao getemperd en in vormen gegoten, waardoor een rijke en authentieke Cacao ontstaat die geschikt is voor zowel ceremonies als dagelijks gebruik.",
+    "peru.p5": "Zie de achterkant van het zakje voor gebruiksinstructies.",
+    "peru.metaOrigin": "Oorsprong",
+    "peru.metaOriginVal": "Satipo, Junín — Centraal Peru · Asháninka coöperatie",
+    "peru.metaVar": "Variëteit",
+    "peru.metaVarVal": "Criollo · 100% biologisch · 100% pure cacaomassa",
+    "peru.metaPrice": "Prijs",
+    "peru.metaPriceVal": "€11,95 — 125g · €21,95 — 250g",
+    "peru.cta": "Bestellen",
+
+    "lotus.label": "Nieuw in de collectie",
+    "lotus.title": "Blauwe Lotus · Cacao Blend",
+    "lotus.p1": "Deze blend met Blauwe Lotus is een bijzondere combinatie van planten en energieën. Blauwe Lotus staat bekend om haar rustgevende en intuïtieve werking, terwijl Cacao helpt om het hart te openen, verbinding te verdiepen en meer aanwezigheid in het moment te brengen. Samen vormen ze een warme, aardende combinatie die uitnodigt tot ontspanning, creativiteit en verbinding.",
+    "lotus.p2": "Elke blend wordt met aandacht, zorg en liefde samengesteld om een zo puur en compleet mogelijk product te creëren. In ieder kopje verwerken we een zelfgemaakt Blauwe Lotus glycerine-extract, gecombineerd met biologische ceremoniële Cacao van Colombia of Peru en een harmonieuze mix van specerijen zoals kardemom, kaneel, vanille en een vleugje cayenne. De kruiden zijn zorgvuldig afgestemd om de diepe, zachte smaak van de cacao te versterken en een verwarmende ervaring te bieden.",
+    "lotus.p3": "Perfect voor rituelen, meditatie, creatieve momenten of een bewust rustpunt gedurende de dag of avond.",
+    "lotus.metaIng": "Ingrediënten",
+    "lotus.metaIngVal": "Blauwe Lotus extract · Cacao (Colombia / Peru) · Kardemom · Kaneel · Vanille · Cayenne",
+    "lotus.metaWeight": "Formaat",
+    "lotus.metaWeightVal": "Eén groot blok ≈ 400 gram · ook beschikbaar in 200 gram",
+    "lotus.metaPrice": "Prijs",
+    "lotus.metaPriceVal": "€33 — 200g · €60 — 400g",
+    "lotus.cta": "Bestellen",
+
+    "val1.title": "Kwaliteit",
+    "val1.desc": "Wij werken met pure ingrediënten en kiezen bewust voor zorgvuldige productie, eerlijke herkomst en aandacht in elk detail. Van boon tot kopje staat kwaliteit centraal.",
+    "val2.title": "Respect",
+    "val2.desc": "Respect vormt de basis van alles wat we doen — voor de aarde, de Cacao, de oorsprong van het product en de mensen die ermee verbonden zijn. We geloven in samenwerken vanuit bewustzijn, dankbaarheid en zorg.",
+    "val3.title": "Verbinding",
+    "val3.desc": "Wij geloven in oprechte verbinding — met onszelf, met elkaar en met de mensen die onze Cacao drinken. Daarom bieden we onze producten niet alleen online aan, maar staan we ook op markten en evenementen.",
+
+    "editorial.quote": "\"Let me guide you back to your heart.\"",
+    "editorial.cite": "— Love, Alma",
+
+    "what.label": "Wat is cacao?",
+    "what.title": "De heilige boon van Mesoamerika",
+    "what.p1": "Ceremoniële cacao is iets totaal anders dan de chocolade die je uit de supermarkt kent. Het is 100% pure cacaomassa — alleen de boon, gefermenteerd, geroosterd en zacht gemalen. Geen suiker, geen melk, geen vulstoffen.",
+    "what.p2": "Al meer dan 5000 jaar wordt cacao gedronken als heilige plant. De Olmeken, Maya's en Azteken zagen haar als een geschenk van de goden — een plantbondgenoot die het hart opent, focus brengt en je dichter bij jezelf brengt.",
+    "bul1.title": "Rijk aan voedingsstoffen",
+    "bul1.desc": "Vol magnesium, ijzer, antioxidanten en theobromine — een zachte, langdurige energie zonder cafeïnedip.",
+    "bul2.title": "Opent het hart",
+    "bul2.desc": "Cacao bevat anandamide en PEA — moleculen die geassocieerd worden met geluk, verbinding en liefde.",
+    "bul3.title": "Zacht en grondend",
+    "bul3.desc": "Geen psychedelicum. Een zachte plantbondgenoot die uitnodigt tot aanwezigheid, focus en zelfreflectie.",
+
+    "ritual.label": "Het ritueel",
+    "ritual.title": "Zo bereid je jouw cacao",
+    "ritual.lead": "Een eenvoudig ritueel. Vier stappen. Een moment voor jezelf.",
+    "step1.title": "Weeg af",
+    "step1.desc": "20–30 gram voor een dagelijkse beker. 40–45 gram voor een ceremoniële dosis.",
+    "step2.title": "Verwarm zacht",
+    "step2.desc": "Verwarm 200 ml water of plantaardige melk tot net onder kookpunt. Niet koken.",
+    "step3.title": "Roer en proef",
+    "step3.desc": "Voeg cacao toe en roer met een houten lepel of garde. Optioneel: honing, kaneel of een snufje chili.",
+    "step4.title": "Drink met aandacht",
+    "step4.desc": "Adem in. Zet een intentie. Drink langzaam. Voel hoe de warmte je hart bereikt.",
+
+    "journal.label": "Kennisbank",
+    "journal.title": "Verhalen uit de cacaowereld",
+    "journal.lead": "Verdieping, wetenschap en wijsheid rond de plant die we zo liefhebben.",
+    "jrn1.meta": "Ritueel · 6 min",
+    "jrn1.title": "Het verschil tussen ceremoniële cacao en chocolade",
+    "jrn1.excerpt": "Waarom is ceremoniële cacao zo anders dan de reep uit de supermarkt? Over bereiding, oorsprong en intentie.",
+    "jrn2.meta": "Geschiedenis · 8 min",
+    "jrn2.title": "5000 jaar cacao: van Olmeken tot vandaag",
+    "jrn2.excerpt": "Een reis door de tijd — hoe een onopvallende jungleplant de gewijde drank werd van koningen en sjamanen.",
+    "jrn3.meta": "Wetenschap · 5 min",
+    "jrn3.title": "Cacao en het hart: wat zegt de wetenschap?",
+    "jrn3.excerpt": "Theobromine, flavanolen, anandamide — de moleculen achter de magie. Wat doet cacao werkelijk in je lichaam?",
+    "journal.read": "Lees verder",
+
+    "news.title": "Blijf in verbinding",
+    "news.lead": "Ontvang maandelijks een zachte brief: nieuwe oogst, rituelen, verhalen en aanbiedingen voor de community.",
+    "news.placeholder": "jouw@email.nl",
+    "news.btn": "Inschrijven",
+    "news.ig": "Volg ons op Instagram · @alma_de_cacao_",
+
+    "footer.tag": "Pure ceremoniële cacao uit Peru en Colombia. Met respect geoogst, met liefde gedeeld.",
+    "footer.shopTitle": "Shop",
+    "footer.shop1": "Criollo Cacao",
+    "footer.shop2": "Blauwe Lotus Blend",
+    "footer.shop3": "Markten & evenementen",
+    "footer.infoTitle": "Info",
+    "footer.info1": "Wat is cacao?",
+    "footer.info2": "Verzending",
+    "footer.info3": "Veelgestelde vragen",
+    "footer.info4": "Algemene voorwaarden",
+    "footer.contactTitle": "Contact",
+    "footer.instagram": "Instagram",
+    "footer.privacy": "Privacy",
+    "footer.copyright": "© 2026 Alma de Cacao · Met liefde gemaakt in Nederland",
+    "footer.signature": "Let me guide you back to your heart."
+  },
+  en: {
+    "meta.title": "Alma de Cacao — Let me guide you back to your heart",
+    "meta.description": "Organic ceremonial cacao from Peru and Colombia. For those seeking connection with the heart.",
+
+    "announce": "Free shipping within the Netherlands on orders over 50 euros",
+
+    "nav.home": "Home",
+    "nav.shop": "Shop",
+    "nav.contact": "Contact",
+    "nav.what": "What is Cacao?",
+
+    "hero.title": "Our newest collection",
+    "hero.sub": "Cacao as part of the ritual to reconnect with your heart.",
+    "hero.cta": "Read more",
+
+    "intro.quote": "Pure, organic cacao from the heart of Peru and Colombia — harvested with care, shared with love.",
+    "intro.cta": "Discover the collection",
+
+    "shop.label": "Our cacao",
+    "shop.title": "Crafted with attention, care and love",
+    "product1.name": "Organic Criollo Cacao from Peru",
+    "product1.price": "€11.95 — 125g · €21.95 — 250g",
+    "product2.name": "Blue Lotus — Cacao Blend",
+    "product2.price": "€33 — 200g · €60 — 400g",
+
+    "peru.label": "Our origin",
+    "peru.title": "Organic Criollo Cacao from Peru",
+    "peru.p1": "This organic Criollo Cacao is harvested in Satipo, in the central part of Peru, in the department of Junín. The Cacao is cultivated with care by associated Asháninka producers from the area around the river Ene, who safeguard the high quality and pure origin of this Cacao.",
+    "peru.p2": "Criollo Cacao is known as one of the most refined and treasured cacao varieties, beloved for its gentle flavour, rich aromas and deep cultural significance.",
+    "peru.p3": "Beyond its remarkable taste experience, ceremonial Cacao also offers a range of natural benefits. Cacao is rich in magnesium, iron and other nourishing substances that contribute to overall wellbeing. Alongside the health benefits, it also works deeply on an emotional and energetic level. Many experience its gentle, opening power when they receive Cacao with attention. She gladly collaborates with you to open the heart and let emotions flow more easily.",
+    "peru.p4": "This Cacao is made by first roasting the beans, then carefully grinding the cacao nibs into a pure, full-bodied paste. The Cacao is then tempered and poured into moulds, creating a rich and authentic Cacao suitable for both ceremonies and daily use.",
+    "peru.p5": "See the back of the pouch for usage instructions.",
+    "peru.metaOrigin": "Origin",
+    "peru.metaOriginVal": "Satipo, Junín — Central Peru · Asháninka cooperative",
+    "peru.metaVar": "Variety",
+    "peru.metaVarVal": "Criollo · 100% organic · 100% pure cacao mass",
+    "peru.metaPrice": "Price",
+    "peru.metaPriceVal": "€11.95 — 125g · €21.95 — 250g",
+    "peru.cta": "Order",
+
+    "lotus.label": "New in the collection",
+    "lotus.title": "Blue Lotus · Cacao Blend",
+    "lotus.p1": "This blend with Blue Lotus is a unique combination of plants and energies. Blue Lotus is known for its calming and intuitive effect, while Cacao helps open the heart, deepen connection and bring more presence to the moment. Together they form a warm, grounding combination that invites relaxation, creativity and connection.",
+    "lotus.p2": "Every blend is crafted with attention, care and love to create the purest and most complete product possible. In each cup we incorporate a homemade Blue Lotus glycerin extract, combined with organic ceremonial Cacao from Colombia or Peru and a harmonious mix of spices such as cardamom, cinnamon, vanilla and a hint of cayenne. The herbs are carefully attuned to enhance the deep, gentle flavour of the cacao and offer a warming experience.",
+    "lotus.p3": "Perfect for rituals, meditation, creative moments or a conscious pause during the day or evening.",
+    "lotus.metaIng": "Ingredients",
+    "lotus.metaIngVal": "Blue Lotus extract · Cacao (Colombia / Peru) · Cardamom · Cinnamon · Vanilla · Cayenne",
+    "lotus.metaWeight": "Format",
+    "lotus.metaWeightVal": "One large block ≈ 400 grams · also available in 200 grams",
+    "lotus.metaPrice": "Price",
+    "lotus.metaPriceVal": "€33 — 200g · €60 — 400g",
+    "lotus.cta": "Order",
+
+    "val1.title": "Quality",
+    "val1.desc": "We work with pure ingredients and consciously choose careful production, honest origin and attention in every detail. From bean to cup, quality is central.",
+    "val2.title": "Respect",
+    "val2.desc": "Respect is the foundation of everything we do — for the earth, the Cacao, the origin of the product and the people connected to it. We believe in collaborating from awareness, gratitude and care.",
+    "val3.title": "Connection",
+    "val3.desc": "We believe in sincere connection — with ourselves, with each other and with the people who drink our Cacao. That's why we offer our products not only online, but also at markets and events.",
+
+    "editorial.quote": "\"Let me guide you back to your heart.\"",
+    "editorial.cite": "— Love, Alma",
+
+    "what.label": "What is cacao?",
+    "what.title": "The sacred bean of Mesoamerica",
+    "what.p1": "Ceremonial cacao is something completely different from the chocolate you know from the supermarket. It's 100% pure cacao paste — only the bean, fermented, roasted and gently ground. No sugar, no milk, no fillers.",
+    "what.p2": "For more than 5000 years, cacao has been consumed as a sacred plant. The Olmecs, Maya and Aztecs saw her as a gift from the gods — a plant ally that opens the heart, brings focus, and brings you closer to yourself.",
+    "bul1.title": "Rich in nutrients",
+    "bul1.desc": "Full of magnesium, iron, antioxidants and theobromine — gentle, long-lasting energy without a caffeine crash.",
+    "bul2.title": "Opens the heart",
+    "bul2.desc": "Cacao contains anandamide and PEA — molecules associated with happiness, connection and love.",
+    "bul3.title": "Gentle and grounding",
+    "bul3.desc": "Not psychedelic. A soft plant ally inviting presence, focus and self-reflection.",
+
+    "ritual.label": "The ritual",
+    "ritual.title": "How to prepare your cacao",
+    "ritual.lead": "A simple ritual. Four steps. A moment for yourself.",
+    "step1.title": "Measure",
+    "step1.desc": "20–30 grams for a daily cup. 40–45 grams for a ceremonial dose.",
+    "step2.title": "Warm gently",
+    "step2.desc": "Warm 200 ml water or plant milk to just below boiling. Don't boil.",
+    "step3.title": "Stir and taste",
+    "step3.desc": "Add cacao and stir with a wooden spoon or whisk. Optional: honey, cinnamon or a pinch of chilli.",
+    "step4.title": "Drink mindfully",
+    "step4.desc": "Breathe in. Set an intention. Drink slowly. Feel the warmth reach your heart.",
+
+    "journal.label": "Journal",
+    "journal.title": "Stories from the cacao world",
+    "journal.lead": "Depth, science and wisdom around the plant we love so deeply.",
+    "jrn1.meta": "Ritual · 6 min",
+    "jrn1.title": "The difference between ceremonial cacao and chocolate",
+    "jrn1.excerpt": "Why is ceremonial cacao so different from the supermarket bar? On preparation, origin and intention.",
+    "jrn2.meta": "History · 8 min",
+    "jrn2.title": "5000 years of cacao: from the Olmecs to today",
+    "jrn2.excerpt": "A journey through time — how an unassuming jungle plant became the sacred drink of kings and shamans.",
+    "jrn3.meta": "Science · 5 min",
+    "jrn3.title": "Cacao and the heart: what does science say?",
+    "jrn3.excerpt": "Theobromine, flavanols, anandamide — the molecules behind the magic. What does cacao really do in your body?",
+    "journal.read": "Read more",
+
+    "news.title": "Stay connected",
+    "news.lead": "Receive a gentle letter once a month: new harvest, rituals, stories and offers for the community.",
+    "news.placeholder": "your@email.com",
+    "news.btn": "Subscribe",
+    "news.ig": "Follow us on Instagram · @alma_de_cacao_",
+
+    "footer.tag": "Pure ceremonial cacao from Peru and Colombia. Harvested with respect, shared with love.",
+    "footer.shopTitle": "Shop",
+    "footer.shop1": "Criollo Cacao",
+    "footer.shop2": "Blue Lotus Blend",
+    "footer.shop3": "Markets & events",
+    "footer.infoTitle": "Info",
+    "footer.info1": "What is cacao?",
+    "footer.info2": "Shipping",
+    "footer.info3": "FAQ",
+    "footer.info4": "Terms",
+    "footer.contactTitle": "Contact",
+    "footer.instagram": "Instagram",
+    "footer.privacy": "Privacy",
+    "footer.copyright": "© 2026 Alma de Cacao · Made with love in the Netherlands",
+    "footer.signature": "Let me guide you back to your heart."
+  }
+};
+
+let currentLang = 'nl';
+
+function setLanguage(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  const dict = translations[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!dict[key]) return;
+    if (el.tagName === 'TITLE') {
+      el.textContent = dict[key];
+    } else if (el.tagName === 'META') {
+      el.setAttribute('content', dict[key]);
+    } else {
+      el.innerHTML = dict[key];
+    }
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key]) el.setAttribute('placeholder', dict[key]);
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+
+  try { localStorage.setItem('almaLang', lang); } catch(e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
+// Init language
+let initialLang = 'nl';
+try {
+  const saved = localStorage.getItem('almaLang');
+  if (saved && translations[saved]) initialLang = saved;
+  else if (navigator.language && navigator.language.toLowerCase().startsWith('en')) initialLang = 'en';
+} catch(e) {}
+setLanguage(initialLang);
+
+// Nav scrolled state
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+// Mobile menu
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('navLeft').classList.toggle('open');
+  document.getElementById('navRight').classList.toggle('open');
+});
+document.querySelectorAll('#navLeft a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLeft').classList.remove('open');
+    document.getElementById('navRight').classList.remove('open');
+  });
+});
+
+// Fade-in
+const fadeEls = document.querySelectorAll('section, .hero-content');
+fadeEls.forEach(el => el.classList.add('fade-in'));
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+fadeEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
