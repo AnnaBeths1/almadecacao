@@ -296,20 +296,27 @@
   .collection-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 28px;
     background: transparent;
     padding: 0 20px 80px;
     max-width: 1100px;
     margin: 0 auto;
   }
   .collection-item {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.4s ease;
+  }
+  .collection-item:hover { transform: translateY(-4px); }
+  .collection-img-wrap {
     aspect-ratio: 4/5;
     overflow: hidden;
-    cursor: pointer;
     background: var(--whisper);
     border-radius: 4px;
     box-shadow: 0 20px 50px -25px rgba(58,40,32,0.25);
+    margin-bottom: 22px;
   }
   .collection-img {
     width: 100%; height: 100%;
@@ -318,6 +325,21 @@
     transition: transform 0.7s ease;
   }
   .collection-item:hover .collection-img { transform: scale(1.04); }
+  .collection-caption-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .collection-item:hover .collection-caption-text h3 { color: var(--mocha); }
+  .collection-caption-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
   .collection-caption {
     background: var(--mocha);
     color: var(--cream);
@@ -1310,110 +1332,24 @@
     </div>
   </div>
   <div class="collection-grid">
-    <a class="collection-item" href="#peru">
-      <img class="collection-img" src="criollo-product.jpg" alt="Biologische Criollo Cacao uit Peru in een mand met wilde bloemen" loading="lazy" />
+    <a class="collection-item" href="https://shop.almadecacao.nl/products/biologische-criollo-cacao-uit-peru" target="_blank" rel="noopener">
+      <div class="collection-img-wrap">
+        <img class="collection-img" src="criollo-product.jpg" alt="Biologische Criollo Cacao uit Peru in een mand met wilde bloemen" loading="lazy" />
+      </div>
+      <div class="collection-caption-text">
+        <h3 data-i18n="product1.name">Biologische Criollo Cacao uit Peru</h3>
+        <p data-i18n="product1.price">€11,95 — 125g · €21,95 — 250g</p>
+      </div>
     </a>
-    <a class="collection-item" href="#lotus">
-      <img class="collection-img" src="lotus-bar-flower.jpg" alt="Blauwe Lotus cacao blok op mos met blauwe lotus bloem" loading="lazy" />
+    <a class="collection-item" href="https://shop.almadecacao.nl/products/blue-lotus-cacao-blend" target="_blank" rel="noopener">
+      <div class="collection-img-wrap">
+        <img class="collection-img" src="lotus-bar-flower.jpg" alt="Blauwe Lotus cacao blok op mos met blauwe lotus bloem" loading="lazy" />
+      </div>
+      <div class="collection-caption-text">
+        <h3 data-i18n="product2.name">Blauwe Lotus — Cacao Blend</h3>
+        <p data-i18n="product2.price">€33 — 200g · €60 — 400g</p>
+      </div>
     </a>
-  </div>
-  <div style="max-width:1100px; margin:-50px auto 0; padding:0 20px;">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
-      <div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:4px;" data-i18n="product1.name">Biologische Criollo Cacao uit Peru</h3>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink-soft);" data-i18n="product1.price">€11,95 — 125g · €21,95 — 250g</p>
-      </div>
-      <div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--ink);margin-bottom:4px;" data-i18n="product2.name">Blauwe Lotus — Cacao Blend</h3>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink-soft);" data-i18n="product2.price">€33 — 200g · €60 — 400g</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== CRIOLLO PERU DETAIL ========== -->
-<section class="peru" id="peru">
-  <div class="container">
-    <div class="peru-grid">
-      <div class="peru-content">
-        <span class="section-label" data-i18n="peru.label">Onze oorsprong</span>
-        <h2 data-i18n="peru.title">Biologische Criollo Cacao uit Peru</h2>
-        <p data-i18n="peru.p1">Deze biologische Criollo Cacao wordt geoogst in Satipo, in het centrale deel van Peru, gelegen in het departement Junín. De Cacao wordt met zorg verbouwd door geassocieerde Asháninka-producenten uit het gebied rondom de rivier de Ene, die de hoge kwaliteit en pure oorsprong van deze Cacao waarborgen.</p>
-        <p data-i18n="peru.p2">Criollo Cacao staat bekend als een van de meest verfijnde en gewaardeerde cacaovariëteiten, geliefd om haar zachte smaak, rijke aroma's en diepe culturele betekenis.</p>
-        <p data-i18n="peru.p3">Naast haar bijzondere smaakbeleving biedt ceremoniële Cacao ook diverse natuurlijke voordelen. Cacao is rijk aan magnesium, ijzer en andere voedende stoffen die bijdragen aan het algemene welzijn. Naast de gezondheidsvoordelen werkt ze ook nog sterk op emotioneel en energetisch niveau. Velen ervaren haar zachte, openende kracht wanneer zij Cacao met aandacht tot zich nemen. Ze werkt graag met je samen om je hart te openen en emoties makkelijker te laten stromen.</p>
-        <p data-i18n="peru.p4">Deze Cacao wordt gemaakt door eerst de bonen te roosteren, en vervolgens de cacaonibs zorgvuldig te malen tot een pure, volle pasta. Vervolgens wordt de Cacao getemperd en in vormen gegoten, waardoor een rijke en authentieke Cacao ontstaat die geschikt is voor zowel ceremonies als dagelijks gebruik.</p>
-        <p class="peru-italic" data-i18n="peru.p5">Zie de achterkant van het zakje voor gebruiksinstructies.</p>
-
-        <div class="lotus-meta">
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="peru.metaOrigin">Oorsprong</span>
-            <span class="lotus-meta-value" data-i18n="peru.metaOriginVal">Satipo, Junín — Centraal Peru · Asháninka coöperatie</span>
-          </div>
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="peru.metaVar">Variëteit</span>
-            <span class="lotus-meta-value" data-i18n="peru.metaVarVal">Criollo · 100% biologisch · 100% pure cacaomassa</span>
-          </div>
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="peru.metaPrice">Prijs</span>
-            <span class="lotus-meta-value" data-i18n="peru.metaPriceVal">€11,95 — 125g · €21,95 — 250g</span>
-          </div>
-        </div>
-
-        <a href="https://shop.almadecacao.nl/products/biologische-criollo-cacao-uit-peru" target="_blank" rel="noopener" class="lotus-cta" data-i18n="peru.cta">Bestellen</a>
-      </div>
-      <div class="peru-visual">
-        <figure class="lotus-hero">
-          <img src="criollo-product.jpg" alt="Biologische Criollo Cacao uit Peru, in mand met wilde bloemen" loading="lazy" />
-        </figure>
-      </div>
-    </div>
-
-    <div class="peru-gallery">
-      <figure><img src="criollo-package-tree.jpg" alt="Criollo Cacao verpakking met open box op gele stof bij boomwortels" loading="lazy" /></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BLAUWE LOTUS DETAIL ========== -->
-<section class="lotus" id="lotus">
-  <div class="container">
-    <div class="lotus-grid">
-      <div class="lotus-visual">
-        <figure class="lotus-hero">
-          <img src="lotus-bar-flower.jpg" alt="Blauwe Lotus cacao blok met blauwe lotus bloem op mos" loading="lazy" />
-        </figure>
-      </div>
-      <div class="lotus-content">
-        <span class="section-label" data-i18n="lotus.label">Nieuw in de collectie</span>
-        <h2 data-i18n="lotus.title">Blauwe Lotus · Cacao Blend</h2>
-        <p data-i18n="lotus.p1">Deze blend met Blauwe Lotus is een bijzondere combinatie van planten en energieën. Blauwe Lotus staat bekend om haar rustgevende en intuïtieve werking, terwijl Cacao helpt om het hart te openen, verbinding te verdiepen en meer aanwezigheid in het moment te brengen. Samen vormen ze een warme, aardende combinatie die uitnodigt tot ontspanning, creativiteit en verbinding.</p>
-        <p data-i18n="lotus.p2">Elke blend wordt met aandacht, zorg en liefde samengesteld om een zo puur en compleet mogelijk product te creëren. In ieder kopje verwerken we een zelfgemaakt Blauwe Lotus glycerine-extract, gecombineerd met biologische ceremoniële Cacao van Colombia of Peru en een harmonieuze mix van specerijen zoals kardemom, kaneel, vanille en een vleugje cayenne. De kruiden zijn zorgvuldig afgestemd om de diepe, zachte smaak van de cacao te versterken en een verwarmende ervaring te bieden.</p>
-        <p class="lotus-italic" data-i18n="lotus.p3">Perfect voor rituelen, meditatie, creatieve momenten of een bewust rustpunt gedurende de dag of avond.</p>
-
-        <div class="lotus-meta">
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="lotus.metaIng">Ingrediënten</span>
-            <span class="lotus-meta-value" data-i18n="lotus.metaIngVal">Blauwe Lotus extract · Cacao (Colombia / Peru) · Kardemom · Kaneel · Vanille · Cayenne</span>
-          </div>
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="lotus.metaWeight">Formaat</span>
-            <span class="lotus-meta-value" data-i18n="lotus.metaWeightVal">Eén groot blok ≈ 400 gram · ook beschikbaar in 200 gram</span>
-          </div>
-          <div class="lotus-meta-row">
-            <span class="lotus-meta-label" data-i18n="lotus.metaPrice">Prijs</span>
-            <span class="lotus-meta-value" data-i18n="lotus.metaPriceVal">€33 — 200g · €60 — 400g</span>
-          </div>
-        </div>
-
-        <a href="https://shop.almadecacao.nl/products/blue-lotus-cacao-blend" target="_blank" rel="noopener" class="lotus-cta" data-i18n="lotus.cta">Bestellen</a>
-      </div>
-    </div>
-
-    <div class="lotus-gallery">
-      <figure><img src="lotus-bar-moss.jpg" alt="Blauwe Lotus cacao blok gebroken op mos en klimop" loading="lazy" /></figure>
-      <figure><img src="lotus-pieces-dress.jpg" alt="Stukjes Blauwe Lotus cacao met bloemblaadjes op crème stof" loading="lazy" /></figure>
-      <figure><img src="lotus-box-fabric.jpg" alt="Blauwe Lotus cacao verpakking met productkaart op stof" loading="lazy" /></figure>
-    </div>
   </div>
 </section>
 
