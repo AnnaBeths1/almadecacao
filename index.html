@@ -330,15 +330,24 @@
     font-style: italic;
     font-size: 22px;
     color: var(--ink);
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     font-weight: 400;
     transition: color 0.2s;
   }
   .collection-item:hover .collection-caption-text h3 { color: var(--mocha); }
-  .collection-caption-text p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+  .collection-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
     color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+  .collection-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--mocha);
   }
   .collection-caption {
     background: var(--mocha);
@@ -1338,7 +1347,8 @@
       </div>
       <div class="collection-caption-text">
         <h3 data-i18n="product1.name">Biologische Criollo Cacao uit Peru</h3>
-        <p data-i18n="product1.price">€11,95 — 125g · €21,95 — 250g</p>
+        <p class="collection-desc" data-i18n="product1.desc">100% pure cacaomassa uit Satipo in Peru. Met zorg verbouwd door Asháninka-producenten — voor een zachte smaak en diepe ceremoniële kracht.</p>
+        <p class="collection-price" data-i18n="product1.price">€11,95 — 125g · €21,95 — 250g</p>
       </div>
     </a>
     <a class="collection-item" href="https://shop.almadecacao.nl/products/blue-lotus-cacao-blend" target="_blank" rel="noopener">
@@ -1347,9 +1357,25 @@
       </div>
       <div class="collection-caption-text">
         <h3 data-i18n="product2.name">Blauwe Lotus — Cacao Blend</h3>
-        <p data-i18n="product2.price">€33 — 200g · €60 — 400g</p>
+        <p class="collection-desc" data-i18n="product2.desc">Ceremoniële cacao met onze zelfgemaakte Blauwe Lotus extract, kardemom, kaneel en vanille. Warm, aardend en uitnodigend tot rust.</p>
+        <p class="collection-price" data-i18n="product2.price">€33 — 200g · €60 — 400g</p>
       </div>
     </a>
+  </div>
+</section>
+
+<!-- ========== EDITORIAL QUOTE ========== -->
+<section class="editorial">
+  <div class="editorial-grid">
+    <div class="editorial-img">
+      <img src="two-cups-hands.jpg" alt="Twee handen die keramieken kopjes ceremoniële cacao vasthouden" loading="lazy" />
+    </div>
+    <div class="editorial-text">
+      <div>
+        <blockquote data-i18n="editorial.quote">"Let me guide you back to your heart."</blockquote>
+        <cite data-i18n="editorial.cite">— Love, Alma</cite>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1436,21 +1462,6 @@
   </div>
 </section>
 
-<!-- ========== EDITORIAL QUOTE ========== -->
-<section class="editorial">
-  <div class="editorial-grid">
-    <div class="editorial-img">
-      <img src="two-cups-hands.jpg" alt="Twee handen die keramieken kopjes ceremoniële cacao vasthouden" loading="lazy" />
-    </div>
-    <div class="editorial-text">
-      <div>
-        <blockquote data-i18n="editorial.quote">"Let me guide you back to your heart."</blockquote>
-        <cite data-i18n="editorial.cite">— Love, Alma</cite>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== WAT IS CACAO ========== -->
 <section class="what-is" id="wat-is-cacao">
   <div class="container">
@@ -1518,7 +1529,7 @@
       <div class="ritual-step">
         <span class="ritual-num">ii.</span>
         <h4 data-i18n="step2.title">Verwarm zacht</h4>
-        <p data-i18n="step2.desc">Verwarm 200 ml water of plantaardige melk tot net onder kookpunt. Niet koken.</p>
+        <p data-i18n="step2.desc">Verwarm 200 ml water of plantaardige melk tot net onder kookpunt.</p>
       </div>
       <div class="ritual-step">
         <span class="ritual-num">iii.</span>
@@ -1686,8 +1697,10 @@ const translations = {
     "shop.label": "Onze cacao",
     "shop.title": "Met aandacht, zorg en liefde samengesteld",
     "product1.name": "Biologische Criollo Cacao uit Peru",
+    "product1.desc": "100% pure cacaomassa uit Satipo in Peru. Met zorg verbouwd door Asháninka-producenten — voor een zachte smaak en diepe ceremoniële kracht.",
     "product1.price": "€11,95 — 125g · €21,95 — 250g",
     "product2.name": "Blauwe Lotus — Cacao Blend",
+    "product2.desc": "Ceremoniële cacao met onze zelfgemaakte Blauwe Lotus extract, kardemom, kaneel en vanille. Warm, aardend en uitnodigend tot rust.",
     "product2.price": "€33 — 200g · €60 — 400g",
 
     "peru.label": "Onze oorsprong",
@@ -1761,7 +1774,7 @@ const translations = {
     "step1.title": "Weeg af",
     "step1.desc": "20–30 gram voor een dagelijkse beker. 40–45 gram voor een ceremoniële dosis.",
     "step2.title": "Verwarm zacht",
-    "step2.desc": "Verwarm 200 ml water of plantaardige melk tot net onder kookpunt. Niet koken.",
+    "step2.desc": "Verwarm 200 ml water of plantaardige melk tot net onder kookpunt.",
     "step3.title": "Roer en proef",
     "step3.desc": "Voeg cacao toe en roer met een houten lepel of garde. Voeg één van onze blends toe. Optioneel: honing, kaneel of een snufje chili.",
 
@@ -1828,8 +1841,10 @@ const translations = {
     "shop.label": "Our cacao",
     "shop.title": "Crafted with attention, care and love",
     "product1.name": "Organic Criollo Cacao from Peru",
+    "product1.desc": "100% pure cacao mass from Satipo in Peru. Cultivated with care by Asháninka producers — for a gentle taste and deep ceremonial power.",
     "product1.price": "€11.95 — 125g · €21.95 — 250g",
     "product2.name": "Blue Lotus — Cacao Blend",
+    "product2.desc": "Ceremonial cacao with our homemade Blue Lotus extract, cardamom, cinnamon and vanilla. Warm, grounding and inviting to rest.",
     "product2.price": "€33 — 200g · €60 — 400g",
 
     "peru.label": "Our origin",
@@ -1903,7 +1918,7 @@ const translations = {
     "step1.title": "Measure",
     "step1.desc": "20–30 grams for a daily cup. 40–45 grams for a ceremonial dose.",
     "step2.title": "Warm gently",
-    "step2.desc": "Warm 200 ml water or plant milk to just below boiling. Don't boil.",
+    "step2.desc": "Warm 200 ml water or plant milk to just below boiling.",
     "step3.title": "Stir and taste",
     "step3.desc": "Add cacao and stir with a wooden spoon or whisk. Add one of our blends. Optional: honey, cinnamon or a pinch of chilli.",
 
